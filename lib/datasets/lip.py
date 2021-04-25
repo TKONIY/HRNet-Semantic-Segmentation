@@ -21,7 +21,7 @@ class LIP(BaseDataset):
                  root,
                  list_path,
                  num_samples=None,
-                 num_classes=20,
+                 num_classes=2,
                  multi_scale=True,
                  flip=True,
                  ignore_label=-1,
@@ -47,6 +47,8 @@ class LIP(BaseDataset):
         self.files = self.read_files()
         if num_samples:
             self.files = self.files[:num_samples]
+        
+        print("\n\n\nlist_path" + self.list_path + "\n\n\n")
 
     def read_files(self):
         files = []
