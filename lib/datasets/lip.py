@@ -48,13 +48,11 @@ class LIP(BaseDataset):
         if num_samples:
             self.files = self.files[:num_samples]
         
-        print("\n\n\nlist_path" + self.list_path + "\n\n\n")
-
     def read_files(self):
         files = []
         for item in self.img_list:
             if 'train' in self.list_path:
-                image_path, label_path, _ = item
+                image_path, label_path = item
                 name = os.path.splitext(os.path.basename(label_path))[0]
                 sample = {"img": image_path,
                           "label": label_path,
