@@ -8,6 +8,7 @@ import os
 
 import cv2
 import numpy as np
+from numpy.core.arrayprint import printoptions
 
 import torch
 from torch.nn import functional as F
@@ -47,6 +48,8 @@ class LIP(BaseDataset):
         self.files = self.read_files()
         if num_samples:
             self.files = self.files[:num_samples]
+
+        self.class_weights = torch.FloatTensor([1, 10]).cuda()
         
     def read_files(self):
         files = []
@@ -151,3 +154,8 @@ class LIP(BaseDataset):
             pred += flip_pred
             pred = pred * 0.5
         return pred.exp()
+
+    def save_pred(self, preds, sv_path, name):
+        preds = np.asarray(np.argmax(preds.cpu(), axis=1), dtype=np.uint8)
+        save_img = Image.fromarray(preds[0] * 255)
+        save_img.save(os.path.join(sv_path, name[0]+'.png'))

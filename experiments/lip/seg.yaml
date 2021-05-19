@@ -11,7 +11,7 @@ PRINT_FREQ: 100
 DATASET:  
   DATASET: lip
   ROOT: 'data/'
-  TEST_SET: 'list/lip/valList.txt'
+  TEST_SET: 'list/lip/testvalList.txt'
   TRAIN_SET: 'list/lip/trainList.txt'
   NUM_CLASSES: 2
 MODEL:

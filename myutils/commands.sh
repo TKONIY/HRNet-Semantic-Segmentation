@@ -1,0 +1,1 @@
+python tools/test.py --cfg experiments/lip/seg.yaml TEST.MODEL_FILE output/lip/seg/best.pth
