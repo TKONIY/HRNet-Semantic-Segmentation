@@ -39,7 +39,7 @@ class LIP(BaseDataset):
         self.root = root
         self.num_classes = num_classes
         self.list_path = list_path
-        self.class_weights = None
+        self.class_weights = torch.FloatTensor([1, 10]).cuda() # weight
 
         self.multi_scale = multi_scale
         self.flip = flip
@@ -49,8 +49,6 @@ class LIP(BaseDataset):
         if num_samples:
             self.files = self.files[:num_samples]
 
-        self.class_weights = torch.FloatTensor([1, 10]).cuda()
-        
     def read_files(self):
         files = []
         for item in self.img_list:
