@@ -1,4 +1,4 @@
-# 展示所有test_result里面的对比结果
+# 展示所有test_result里面的对比结果，
 count=0
 n=`ls $HRNET/test_results | wc -l`
 for i in `ls $HRNET/test_results`;

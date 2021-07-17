@@ -1,3 +1,8 @@
+########################################
+# 图形化展示一个日志文件，并输出图片到figs下
+# 使用方式： python show_logs.py <log file name>
+#######################################
+
 from sre_constants import RANGE
 import sys
 import re

@@ -1,4 +1,5 @@
 # import_testset.sh ~/Pytorch-UNet/data-16B/
+# 从某个原始数据目录导入测试集：应该后面没用
 
 data_dir=$1
 data_index=`expr "$data_dir" : '.*data-\(.*\)/'`

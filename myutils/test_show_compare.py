@@ -1,3 +1,7 @@
+##############################################################################
+# 对于一张test_result中的图片，合并它的img和label生成一张对比图，目录在figs/predict/下
+# python test_show_compare.py  <test result name>
+##############################################################################
 from mmap import MAP_EXECUTABLE
 from PIL import Image
 import matplotlib.pyplot as plt
