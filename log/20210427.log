@@ -1,0 +1,290 @@
+nohup: ignoring input
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+Seeding with 304
+=> creating output/lip/seg
+=> creating log/lip/seg_hrnet/seg_2021-04-27-13-28
+Namespace(cfg='experiments/lip/seg.yaml', local_rank=0, opts=[], seed=304)
+AUTO_RESUME: False
+CUDNN:
+  BENCHMARK: True
+  DETERMINISTIC: False
+  ENABLED: True
+DATASET:
+  DATASET: lip
+  EXTRA_TRAIN_SET: 
+  NUM_CLASSES: 2
+  ROOT: data/
+  TEST_SET: list/lip/valList.txt
+  TRAIN_SET: list/lip/trainList.txt
+DEBUG:
+  DEBUG: False
+  SAVE_BATCH_IMAGES_GT: False
+  SAVE_BATCH_IMAGES_PRED: False
+  SAVE_HEATMAPS_GT: False
+  SAVE_HEATMAPS_PRED: False
+GPUS: (0, 1)
+LOG_DIR: log
+LOSS:
+  BALANCE_WEIGHTS: [1]
+  CLASS_BALANCE: False
+  OHEMKEEP: 131072
+  OHEMTHRES: 0.9
+  USE_OHEM: False
+MODEL:
+  ALIGN_CORNERS: False
+  EXTRA:
+    FINAL_CONV_KERNEL: 1
+    STAGE1:
+      BLOCK: BOTTLENECK
+      FUSE_METHOD: SUM
+      NUM_BLOCKS: [4]
+      NUM_CHANNELS: [64]
+      NUM_MODULES: 1
+      NUM_RANCHES: 1
+    STAGE2:
+      BLOCK: BASIC
+      FUSE_METHOD: SUM
+      NUM_BLOCKS: [4, 4]
+      NUM_BRANCHES: 2
+      NUM_CHANNELS: [48, 96]
+      NUM_MODULES: 1
+    STAGE3:
+      BLOCK: BASIC
+      FUSE_METHOD: SUM
+      NUM_BLOCKS: [4, 4, 4]
+      NUM_BRANCHES: 3
+      NUM_CHANNELS: [48, 96, 192]
+      NUM_MODULES: 4
+    STAGE4:
+      BLOCK: BASIC
+      FUSE_METHOD: SUM
+      NUM_BLOCKS: [4, 4, 4, 4]
+      NUM_BRANCHES: 4
+      NUM_CHANNELS: [48, 96, 192, 384]
+      NUM_MODULES: 3
+  NAME: seg_hrnet
+  NUM_OUTPUTS: 1
+  OCR:
+    DROPOUT: 0.05
+    KEY_CHANNELS: 256
+    MID_CHANNELS: 512
+    SCALE: 1
+  PRETRAINED: 
+OUTPUT_DIR: output
+PIN_MEMORY: True
+PRINT_FREQ: 100
+RANK: 0
+TEST:
+  BASE_SIZE: 473
+  BATCH_SIZE_PER_GPU: 16
+  FLIP_TEST: False
+  IMAGE_SIZE: [473, 473]
+  MODEL_FILE: 
+  MULTI_SCALE: False
+  NUM_SAMPLES: 2000
+  OUTPUT_INDEX: -1
+  SCALE_LIST: [1]
+TRAIN:
+  BASE_SIZE: 473
+  BATCH_SIZE_PER_GPU: 5
+  BEGIN_EPOCH: 0
+  DOWNSAMPLERATE: 1
+  END_EPOCH: 150
+  EXTRA_EPOCH: 0
+  EXTRA_LR: 0.001
+  FLIP: True
+  FREEZE_EPOCHS: -1
+  FREEZE_LAYERS: 
+  IGNORE_LABEL: 255
+  IMAGE_SIZE: [473, 473]
+  LR: 0.007
+  LR_FACTOR: 0.1
+  LR_STEP: [90, 110]
+  MOMENTUM: 0.9
+  MULTI_SCALE: True
+  NESTEROV: False
+  NONBACKBONE_KEYWORDS: []
+  NONBACKBONE_MULT: 10
+  NUM_SAMPLES: 0
+  OPTIMIZER: sgd
+  RANDOM_BRIGHTNESS: False
+  RANDOM_BRIGHTNESS_SHIFT_VALUE: 10
+  RESUME: True
+  SCALE_FACTOR: 11
+  SHUFFLE: True
+  WD: 0.0005
+WORKERS: 2
+Seeding with 304
+=> creating output/lip/seg
+=> creating log/lip/seg_hrnet/seg_2021-04-27-13-28
+Namespace(cfg='experiments/lip/seg.yaml', local_rank=1, opts=[], seed=304)
+AUTO_RESUME: False
+CUDNN:
+  BENCHMARK: True
+  DETERMINISTIC: False
+  ENABLED: True
+DATASET:
+  DATASET: lip
+  EXTRA_TRAIN_SET: 
+  NUM_CLASSES: 2
+  ROOT: data/
+  TEST_SET: list/lip/valList.txt
+  TRAIN_SET: list/lip/trainList.txt
+DEBUG:
+  DEBUG: False
+  SAVE_BATCH_IMAGES_GT: False
+  SAVE_BATCH_IMAGES_PRED: False
+  SAVE_HEATMAPS_GT: False
+  SAVE_HEATMAPS_PRED: False
+GPUS: (0, 1)
+LOG_DIR: log
+LOSS:
+  BALANCE_WEIGHTS: [1]
+  CLASS_BALANCE: False
+  OHEMKEEP: 131072
+  OHEMTHRES: 0.9
+  USE_OHEM: False
+MODEL:
+  ALIGN_CORNERS: False
+  EXTRA:
+    FINAL_CONV_KERNEL: 1
+    STAGE1:
+      BLOCK: BOTTLENECK
+      FUSE_METHOD: SUM
+      NUM_BLOCKS: [4]
+      NUM_CHANNELS: [64]
+      NUM_MODULES: 1
+      NUM_RANCHES: 1
+    STAGE2:
+      BLOCK: BASIC
+      FUSE_METHOD: SUM
+      NUM_BLOCKS: [4, 4]
+      NUM_BRANCHES: 2
+      NUM_CHANNELS: [48, 96]
+      NUM_MODULES: 1
+    STAGE3:
+      BLOCK: BASIC
+      FUSE_METHOD: SUM
+      NUM_BLOCKS: [4, 4, 4]
+      NUM_BRANCHES: 3
+      NUM_CHANNELS: [48, 96, 192]
+      NUM_MODULES: 4
+    STAGE4:
+      BLOCK: BASIC
+      FUSE_METHOD: SUM
+      NUM_BLOCKS: [4, 4, 4, 4]
+      NUM_BRANCHES: 4
+      NUM_CHANNELS: [48, 96, 192, 384]
+      NUM_MODULES: 3
+  NAME: seg_hrnet
+  NUM_OUTPUTS: 1
+  OCR:
+    DROPOUT: 0.05
+    KEY_CHANNELS: 256
+    MID_CHANNELS: 512
+    SCALE: 1
+  PRETRAINED: 
+OUTPUT_DIR: output
+PIN_MEMORY: True
+PRINT_FREQ: 100
+RANK: 0
+TEST:
+  BASE_SIZE: 473
+  BATCH_SIZE_PER_GPU: 16
+  FLIP_TEST: False
+  IMAGE_SIZE: [473, 473]
+  MODEL_FILE: 
+  MULTI_SCALE: False
+  NUM_SAMPLES: 2000
+  OUTPUT_INDEX: -1
+  SCALE_LIST: [1]
+TRAIN:
+  BASE_SIZE: 473
+  BATCH_SIZE_PER_GPU: 5
+  BEGIN_EPOCH: 0
+  DOWNSAMPLERATE: 1
+  END_EPOCH: 150
+  EXTRA_EPOCH: 0
+  EXTRA_LR: 0.001
+  FLIP: True
+  FREEZE_EPOCHS: -1
+  FREEZE_LAYERS: 
+  IGNORE_LABEL: 255
+  IMAGE_SIZE: [473, 473]
+  LR: 0.007
+  LR_FACTOR: 0.1
+  LR_STEP: [90, 110]
+  MOMENTUM: 0.9
+  MULTI_SCALE: True
+  NESTEROV: False
+  NONBACKBONE_KEYWORDS: []
+  NONBACKBONE_MULT: 10
+  NUM_SAMPLES: 0
+  OPTIMIZER: sgd
+  RANDOM_BRIGHTNESS: False
+  RANDOM_BRIGHTNESS_SHIFT_VALUE: 10
+  RESUME: True
+  SCALE_FACTOR: 11
+  SHUFFLE: True
+  WD: 0.0005
+WORKERS: 2
+=> init weights from normal distribution
+=> init weights from normal distribution
+Epoch: [0/150] Iter:[0/1607], Time: 3.76, lr: [0.007], Loss: 0.672439
+Epoch: [0/150] Iter:[100/1607], Time: 1.09, lr: [0.006997386380129365], Loss: 0.043073
+Epoch: [0/150] Iter:[200/1607], Time: 1.09, lr: [0.006994772651785015], Loss: 0.032483
+Epoch: [0/150] Iter:[300/1607], Time: 1.09, lr: [0.006992158814917406], Loss: 0.027884
+Epoch: [0/150] Iter:[400/1607], Time: 1.09, lr: [0.006989544869476952], Loss: 0.025040
+Epoch: [0/150] Iter:[500/1607], Time: 1.08, lr: [0.006986930815414025], Loss: 0.023177
+Epoch: [0/150] Iter:[600/1607], Time: 1.09, lr: [0.006984316652678951], Loss: 0.021517
+Epoch: [0/150] Iter:[700/1607], Time: 1.08, lr: [0.006981702381222015], Loss: 0.020303
+Epoch: [0/150] Iter:[800/1607], Time: 1.09, lr: [0.006979088000993458], Loss: 0.019115
+Epoch: [0/150] Iter:[900/1607], Time: 1.09, lr: [0.006976473511943476], Loss: 0.018281
+Epoch: [0/150] Iter:[1000/1607], Time: 1.09, lr: [0.0069738589140222245], Loss: 0.021753
+Epoch: [0/150] Iter:[1100/1607], Time: 1.09, lr: [0.006971244207179811], Loss: 0.021690
+Epoch: [0/150] Iter:[1200/1607], Time: 1.09, lr: [0.0069686293913663044], Loss: 0.021540
+Epoch: [0/150] Iter:[1300/1607], Time: 1.09, lr: [0.006966014466531726], Loss: 0.021446
+Epoch: [0/150] Iter:[1400/1607], Time: 1.09, lr: [0.006963399432626054], Loss: 0.021150
+Epoch: [0/150] Iter:[1500/1607], Time: 1.09, lr: [0.006960784289599225], Loss: 0.020789
+Epoch: [0/150] Iter:[1600/1607], Time: 1.09, lr: [0.006958169037401129], Loss: 0.020462
+Traceback (most recent call last):
+  File "tools/train.py", line 322, in <module>
+    main()
+  File "tools/train.py", line 290, in main
+    testloader, model, writer_dict)
+  File "/home/dengyangshen/HRNet-Semantic-Segmentation/tools/../lib/core/function.py", line 147, in validate
+    writer.add_scalar('valid_loss', ave_loss.average(), global_steps)
+  File "/home/dengyangshen/anaconda3/envs/fossil/lib/python3.7/site-packages/tensorboardX/writer.py", line 442, in add_scalar
+    scalar(tag, scalar_value, display_name, summary_description), global_step, walltime)
+  File "/home/dengyangshen/anaconda3/envs/fossil/lib/python3.7/site-packages/tensorboardX/summary.py", line 152, in scalar
+    scalar = make_np(scalar)
+  File "/home/dengyangshen/anaconda3/envs/fossil/lib/python3.7/site-packages/tensorboardX/x2num.py", line 36, in make_np
+    'Got {}, but expected numpy array or torch tensor.'.format(type(x)))
+NotImplementedError: Got <class 'NoneType'>, but expected numpy array or torch tensor.
+0 [0. 0.] 0.0
+Traceback (most recent call last):
+  File "tools/train.py", line 322, in <module>
+    main()
+  File "tools/train.py", line 290, in main
+    testloader, model, writer_dict)
+  File "/home/dengyangshen/HRNet-Semantic-Segmentation/tools/../lib/core/function.py", line 147, in validate
+    writer.add_scalar('valid_loss', ave_loss.average(), global_steps)
+  File "/home/dengyangshen/anaconda3/envs/fossil/lib/python3.7/site-packages/tensorboardX/writer.py", line 442, in add_scalar
+    scalar(tag, scalar_value, display_name, summary_description), global_step, walltime)
+  File "/home/dengyangshen/anaconda3/envs/fossil/lib/python3.7/site-packages/tensorboardX/summary.py", line 152, in scalar
+    scalar = make_np(scalar)
+  File "/home/dengyangshen/anaconda3/envs/fossil/lib/python3.7/site-packages/tensorboardX/x2num.py", line 36, in make_np
+    'Got {}, but expected numpy array or torch tensor.'.format(type(x)))
+NotImplementedError: Got <class 'NoneType'>, but expected numpy array or torch tensor.
+Traceback (most recent call last):
+  File "/home/dengyangshen/anaconda3/envs/fossil/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/dengyangshen/anaconda3/envs/fossil/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/dengyangshen/anaconda3/envs/fossil/lib/python3.7/site-packages/torch/distributed/launch.py", line 261, in <module>
+    main()
+  File "/home/dengyangshen/anaconda3/envs/fossil/lib/python3.7/site-packages/torch/distributed/launch.py", line 257, in main
+    cmd=cmd)
+subprocess.CalledProcessError: Command '['/home/dengyangshen/anaconda3/envs/fossil/bin/python', '-u', 'tools/train.py', '--local_rank=1', '--cfg', 'experiments/lip/seg.yaml']' returned non-zero exit status 1.
